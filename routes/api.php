@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::get('professor/classes','ClasseController@findByProf');
+Route::post('professor/classes','ClasseController@store');
+Route::delete('professor/classes/{id}','ClasseController@destroy');
+Route::post('professor/affect','ClasseEtudiantController@affecterAClasse');

@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('professor/classes','ClasseController@findByProf');
+Route::post('professor/classes','ClasseController@store');
+
